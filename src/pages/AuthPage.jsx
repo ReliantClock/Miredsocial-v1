@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate, useSearchParams, Link } from "react-router-dom";
-import { supabase } from "../../lib/supabase.js";
+import { supabase } from "../lib/supabase.js";
 import { isValidEmail, isValidPassword, isValidAlias } from "../../lib/security.js";
-import { SITE_CONFIG } from "../../config/site.config.js";
+import { SITE_CONFIG } from "../config/site.config.js";
 import { Eye, EyeOff, Loader } from "lucide-react";
 
 export default function AuthPage() {
