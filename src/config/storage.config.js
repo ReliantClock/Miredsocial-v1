@@ -9,10 +9,10 @@ export const STORAGE_PROVIDER = "supabase";
 
 // ── Supabase Storage ──────────────────────────────────────────
 export const SUPABASE_STORAGE = {
-  url:        import.meta.env.https://mpqrkyipcsigvmcgtlaa.supabase.co,
-  anonKey:    import.meta.env.sb_publishable_xEWhnynAxZ5sMCvi8BCNmQ_VosJEBUw,
+  url:        import.meta.env.VITE_SUPABASE_URL,
+  anonKey:    import.meta.env.VITE_SUPABASE_ANON_KEY,
   bucket:     "media",          // Nombre del bucket de Supabase Storage
-  publicUrl:  `${import.meta.env.https://mpqrkyipcsigvmcgtlaa.supabase.co}/storage/v1/object/public/media`,
+  publicUrl:  `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/media`,
 };
 
 // ── Cloudinary ────────────────────────────────────────────────
