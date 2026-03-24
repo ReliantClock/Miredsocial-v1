@@ -8,9 +8,9 @@ const NAV_ITEMS = [
   { to: "/comunidades", label: SITE_CONFIG.nav.communities, icon: Users     },
 ];
 
-export default function Navbar({ mobileOpen, onClose }) {
+export default function Navbar() {
   return (
-    <nav className={`navbar ${mobileOpen ? "navbar-open" : ""}`}>
+    <nav className="navbar">
       <div className="navbar-inner">
         {NAV_ITEMS.map(({ to, label, icon: Icon }) => (
           <NavLink
@@ -18,7 +18,6 @@ export default function Navbar({ mobileOpen, onClose }) {
             to={to}
             end={to === "/"}
             className={({ isActive }) => `nav-item ${isActive ? "nav-item-active" : ""}`}
-            onClick={onClose}
           >
             <Icon size={20} />
             <span>{label}</span>
