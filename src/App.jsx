@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext.jsx";
 import Header from "./components/layout/Header.jsx";
@@ -9,23 +9,16 @@ import CommunitiesPage from "./pages/CommunitiesPage.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx";
 import AuthPage from "./pages/AuthPage.jsx";
 import AdminPanel from "./pages/AdminPanel.jsx";
+import SettingsPage from "./pages/SettingsPage.jsx";
 import "./styles/main.css";
 
 export default function App() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-
   return (
     <AuthProvider>
       <BrowserRouter>
         <div className="app-shell">
-          <Header
-            onMenuToggle={() => setMobileOpen(v => !v)}
-            mobileOpen={mobileOpen}
-          />
-          <Navbar
-            mobileOpen={mobileOpen}
-            onClose={() => setMobileOpen(false)}
-          />
+          <Header />
+          <Navbar />
           <main className="main-content">
             <Routes>
               <Route path="/"            element={<HomePage />} />
@@ -35,6 +28,7 @@ export default function App() {
               <Route path="/perfil/:alias" element={<ProfilePage />} />
               <Route path="/auth"        element={<AuthPage />} />
               <Route path="/admin"       element={<AdminPanel />} />
+              <Route path="/ajustes"     element={<SettingsPage />} />
             </Routes>
           </main>
         </div>
